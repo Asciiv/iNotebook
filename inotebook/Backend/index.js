@@ -1,8 +1,7 @@
-import express from 'express';
-import { connectDB } from './db/config.js';
-import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
-
+const express = require('express');
+const dotenv = require('dotenv');
+const connectDB = require('./db/config.js');
+//import {author} from './routes/auth.js'
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
@@ -13,13 +12,10 @@ connectDB();
 
 app.use(express.json());
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req, res) => {
-  res.status(200).json({ message: 'Heartbeat: Server is up and running!' });
-});
+app.use('/api/auth',require('./routes/auth.js'));
 
+app.use('/api/notes',require('./routes/notes.js',));
 
 app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`);

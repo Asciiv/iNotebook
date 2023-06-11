@@ -1,12 +1,12 @@
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
 const URI = process.env.URI; // MongoDB URL from Atlas
 
 // Function to connect to the database
-export const connectDB = async () => {
+ const connectDB = async () => {
   try {
     await mongoose.connect(URI, {
       useNewUrlParser: true,
@@ -19,3 +19,4 @@ export const connectDB = async () => {
     process.exit(1); // Exit the process with a non-zero code
   }
 };
+module.exports = connectDB;
