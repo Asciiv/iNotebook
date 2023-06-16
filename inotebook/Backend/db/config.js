@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-dotenv.config();
+require('dotenv').config();
 
-const URI = process.env.URI; // MongoDB URL from Atlas
+const URI = 'mongodb+srv://kartikeym2:9881199073Km@cluster1.bws7ovj.mongodb.net/iNotebook?retryWrites=true&w=majority'// MongoDB URL from Atlas
 
 // Function to connect to the database
  const connectDB = async () => {
