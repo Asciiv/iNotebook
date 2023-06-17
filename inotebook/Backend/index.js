@@ -18,5 +18,5 @@ app.use('/api/auth/',require('./routes/auth.js'));
 app.use('/api/notes',require('./routes/notes.js',));
 
 app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:${PORT}`);
+    console.log(`ApniBook app listening at http://localhost:${PORT}`);
   });
